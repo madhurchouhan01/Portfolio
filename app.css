@@ -8,7 +8,7 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'Shantell Sans', cursive;
+    font-family:'Brush Script MT', cursive;
 }
 
 :root {
@@ -402,9 +402,9 @@ span {
     padding-top: .5rem;
 }
 .education-img{
+
     height: 50rem; 
     display: flex;
-    margin-left: 90px;
     padding-bottom: 50px;
 
 }
