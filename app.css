@@ -408,7 +408,7 @@ span {
     padding-bottom: 50px;
 
 }
-
+/* 
 .skills {
     min-height: auto;
     padding-bottom: 7rem;
@@ -515,7 +515,54 @@ span {
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span {
     width: 55%;
+} */
+
+.img-icon{
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
 }
+.img-icon li{
+    margin: 20px 40px 20px 20px;
+    position:relative;
+    display: inline-flex;
+    width: 80px;
+    height: 80px; 
+}
+.skill-border{
+    border: 2px solid #ffffff;
+    border-radius:100px;
+    padding: 80px;
+    background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjust margin and padding for smaller screens */
+    .img-icon {
+      margin-left: 20px;
+      margin-right: 0;
+    }
+    .img-icon li{
+        height: 50px;
+        width: 50px;
+    }
+    .skill-border {
+      padding: 10px;
+      border-radius: 40px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Further adjustments for even smaller screens */
+    .img-icon {
+      margin-left: 10px;
+    }
+    
+    .skill-border {
+      padding: 5px;
+    }
+  }
 
 .portfolio {
     min-height: auto;
