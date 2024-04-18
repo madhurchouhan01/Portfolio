@@ -38,7 +38,7 @@ ScrollReveal().reveal('.left', {origin: 'left'})
 ScrollReveal().reveal('.right', {origin: 'right'})
 ScrollReveal().reveal('.top', {origin: 'top'})
 ScrollReveal().reveal('.bottom', {origin: 'bottom'})
-
+ScrollReveal().reveal('.skills', {origin: 'top'})
 
 const typed = new Typed('.multiple-text', {
     strings: ['Software Engineer', 'AI Engineer 🤖', 'ML Engineer'],
