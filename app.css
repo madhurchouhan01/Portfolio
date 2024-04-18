@@ -517,6 +517,10 @@ span {
     width: 55%;
 } */
 
+.skills{
+    background: var(--second-bg-color);
+    padding-bottom:150px;
+}
 .img-icon{
     justify-content: center;
     align-items: center;
@@ -538,14 +542,14 @@ span {
 }
 
 @media screen and (max-width: 768px) {
-    /* Adjust margin and padding for smaller screens */
     .img-icon {
       margin-left: 20px;
       margin-right: 0;
     }
     .img-icon li{
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
+        margin:15px;
     }
     .skill-border {
       padding: 10px;
@@ -553,16 +557,6 @@ span {
     }
   }
   
-  @media screen and (max-width: 480px) {
-    /* Further adjustments for even smaller screens */
-    .img-icon {
-      margin-left: 10px;
-    }
-    
-    .skill-border {
-      padding: 5px;
-    }
-  }
 
 .portfolio {
     min-height: auto;
