@@ -41,7 +41,7 @@ ScrollReveal().reveal('.bottom', {origin: 'bottom'})
 ScrollReveal().reveal('.skills', {origin: 'top'})
 
 const typed = new Typed('.multiple-text', {
-    strings: ['Software Engineer', 'AI Engineer 🤖', 'ML Engineer'],
+    strings: ['an AI Engineer', 'an ML Engineer','a Software Engineer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,

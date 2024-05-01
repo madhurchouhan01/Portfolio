@@ -87,7 +87,7 @@ section {
 }
 
 .my-img img {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     width: 30rem;
     }
 
@@ -179,13 +179,13 @@ section {
 }
 
 .home-sci {
-    position: absolute;
+    position: relative;
     bottom: 10rem;
     width: 35rem;
     display:flex;
     justify-content: space-between;
     gap: 1rem;
-    margin-left: 58%;
+    /* marginfa-left: 58%; */
     
 }
 
@@ -321,7 +321,8 @@ span {
     align-items: center;
     flex-direction: row;
     min-height: auto;
-    padding-bottom: 5rem;
+    padding-bottom: 20rem;
+    
 }
 
 .education .education-row {
@@ -522,23 +523,27 @@ span {
     padding-bottom:150px;
 }
 .img-icon{
-    justify-content: center;
-    align-items: center;
-    margin-left: 100px;
-    margin-right: 100px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    padding: 20px; 
 }
 .img-icon li{
     margin: 20px 40px 20px 20px;
-    position:relative;
     display: inline-flex;
     width: 80px;
     height: 80px; 
+    transition: transform 0.3s ease;
 }
-.skill-border{
+.img-icon li:hover {
+    transform: scale(1.1); /* Scale up slightly on hover */
+}
+.skill-border {
     border: 2px solid #ffffff;
-    border-radius:100px;
-    padding: 80px;
-    background-color: white;
+    border-radius: 100px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 768px) {
@@ -795,7 +800,7 @@ span {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
     html {
         width: 100vw;
         overflow-x: hidden;
@@ -836,12 +841,13 @@ span {
     .home {
         padding-top: 10rem;
         flex-direction: column;
-        justify-content: space-evenly;
-        max-height: 200vh;
+        justify-content: space-evenly;        
     }
 
     .home-content h1, .home-content p {
         text-align: center;
+        overflow: hidden;
+
     }
 
     .home-content .text-animate {
@@ -851,7 +857,8 @@ span {
 
     .home .home-info {
         order: 2;
-        height: 45rem;
+        height: auto;
+        
     }
 
     .home-sci {
@@ -867,12 +874,15 @@ span {
     .about {
         flex-direction: column;
         justify-content: space-evenly;
+        overflow-x: hidden;
     }
 
     .about .about-details {
         width: 90%;
+        max-width: 100%;
     }
 
+ 
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
     }
