@@ -41,9 +41,33 @@ ScrollReveal().reveal('.bottom', {origin: 'bottom'})
 ScrollReveal().reveal('.skills', {origin: 'top'})
 
 const typed = new Typed('.multiple-text', {
-    strings: ['an AI Engineer', 'an ML Engineer','a Software Engineer'],
+    strings: ['a Data Scientist','an AI Engineer', 'an ML Engineer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
 })
+
+document.addEventListener("DOMContentLoaded", () => {
+    const icons = document.querySelectorAll(".img-icon li");
+    const observerOptions = {
+        root: null, // Use the viewport as the container
+        rootMargin: "0px",
+        threshold: 0.1, // Trigger when 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // Add the "visible" class with a delay
+                const index = Array.from(icons).indexOf(entry.target);
+                setTimeout(() => {
+                    entry.target.classList.add("visible");
+                }, index * 100); // Delay based on the index
+            }
+        });
+    }, observerOptions);
+
+    icons.forEach((icon) => observer.observe(icon));
+});
+
