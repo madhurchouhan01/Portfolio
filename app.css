@@ -12,11 +12,19 @@
 }
 
 :root {
+    --bg-color: #ffffff;
+    --second-bg-color: #f0f7ff;
+    --text-color: #000000;
+    --main-color: #e43f3f;  
+}
+
+.dark-mode {
     --bg-color: #000000;
     --second-bg-color: #262626;
     --text-color: #ffffff;
-    --main-color: #94b2bd;  
+    --main-color: #94b2bd;
 }
+
 
 html {
     font-size: 62.5%;
@@ -59,6 +67,20 @@ body {
 .navbar a:hover, .navbar a.active {
     color: var(--main-color);
 }
+
+#theme-toggle {
+    font-size: 24px; /* Makes the icon larger */
+    padding: 10px 15px; /* Increases button size */
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  #theme-toggle:hover {
+    background-color: #ddd; /* Light hover effect */
+  }
+  
 
 #menu-icon {
     font-size: 3.6rem;
