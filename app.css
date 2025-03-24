@@ -54,6 +54,7 @@ body {
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
+    margin-right: auto;
 }
 
 .navbar a {
@@ -62,6 +63,7 @@ body {
     font-weight: 500;
     margin-left: 3.5rem;
     transition: .3s;
+    padding: 10px 15px 0px 0px ;
 }
 
 .navbar a:hover, .navbar a.active {
@@ -69,19 +71,21 @@ body {
 }
 
 #theme-toggle {
-    font-size: 24px; /* Makes the icon larger */
-    padding: 10px 15px; /* Increases button size */
-    border: 2px solid black;
-    border-radius: 8px;
-    background-color: white;
+    font-size: 30px; 
+    background-color: var(--bg-color);
     cursor: pointer;
+    transition: transform 0.5s ease-in-out;
   }
   
   #theme-toggle:hover {
-    background-color: #ddd; /* Light hover effect */
+    transform: rotate(360deg);
   }
-  
-
+  @media screen and (max-width: 768px) {
+    #theme-toggle {
+        font-size: 20px; 
+        padding: 4px 10px 10px;
+    }
+}
 #menu-icon {
     font-size: 3.6rem;
     color: var(--text-color);
