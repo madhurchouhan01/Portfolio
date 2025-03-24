@@ -8,6 +8,13 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active')
 }
 
+document.addEventListener('click', (event) => {
+    if (!menuIcon.contains(event.target) && !navbar.contains(event.target)) {
+        navbar.classList.remove('active')
+        menuIcon.classList.remove('bx-x')
+    }
+})
+
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY
