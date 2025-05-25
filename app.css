@@ -328,7 +328,8 @@ section {
   }
 
   .askme p {
-    font-size: 1.1rem;
+    font-size: 2.1rem;
+    color: #565656;
     padding: 0 1rem;
   }
 
@@ -338,11 +339,11 @@ section {
   }
 
   .card h3 {
-    font-size: 1.1rem;
+    font-size: 2.1rem;
   }
 
   .askme .card p {
-    font-size: 0.95rem;
+    font-size: 1.95rem;
     text-align: center;
   }
 }
@@ -612,8 +613,9 @@ span {
     border-radius: 100px;
     padding: 20px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px var(--main-color); 
 }
+
 @media screen and (max-width: 768px) {
     .img-icon {
         margin: 0 auto;
