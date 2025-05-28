@@ -13,6 +13,8 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 
 </head>
 
@@ -210,9 +212,15 @@
                 <div class="img-icon">
                     <li>
                         <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
                     </li>
-
+                    <li>
+                        <img src="assets/crewai-text.svg" />
+                    </li>                    
+                    <li>
+                        <img src="assets/agentops3.png" width="100" height="80"/>
+                    </li>
+                    
                     <li>
                         <img
                             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-plain.svg" />
@@ -258,9 +266,6 @@
                     <li>
                         <img
                             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original-wordmark.svg" />
-                    </li>
-                    <li>
-                        <img src="assets/crewai-text.svg" />
                     </li>
                     <li>
                         <img src="assets/pydantic-ai-light.svg" />
@@ -402,42 +407,37 @@
     <section class="contact bottom" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
 
-        <!-- <div class="bye-img right">
-            <img src="./assets/bye.png" alt="">
-        </div> -->
-        <form action="#">
+        <div id="msg"></div>
+        
+        <form name="submit-to-emailjs">
             <div class="input-box">
                 <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" name="Name" placeholder="Full Name" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email" required>
                     <span class="focus"></span>
                 </div>
             </div>
 
             <div class="input-box">
                 <div class="input-field">
-                    <input type="number" placeholder="Phone No" required>
+                    <input type="number" name="phone" placeholder="Phone No" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Email Subject" required>
+                    <input type="text" name="subject" placeholder="Email Subject" required>
                     <span class="focus"></span>
                 </div>
             </div>
 
             <div class="textarea-field">
                 <span class="focus"></span>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <textarea name="Message" cols="30" rows="10" placeholder="Your Message" required></textarea>
             </div>
 
             <div class="btn-box btns">
-                <!-- <button type="submit" class="btn">Create With AI</button>
-                <br><br>
-                <p style="font-size: 20px;">Or</p>
-                <br> -->
                 <button type="submit" class="btn">Submit</button>
             </div>
         </form>

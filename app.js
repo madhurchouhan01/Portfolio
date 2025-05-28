@@ -100,3 +100,39 @@ toggleButton.addEventListener('click', () => {
         toggleButton.textContent = '🌛';
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("qXyoPFNfHn9US_4Kn"); 
+
+    const form = document.forms['submit-to-emailjs'];
+    const msg = document.getElementById("msg");
+
+    form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const templateParams = {
+        from_name: formData.get("Name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        subject: formData.get("subject"),
+        message: formData.get("Message"),
+    };
+
+    console.log("Sending email with data:", templateParams);
+
+    emailjs.send("service_jazapo7", "template_511tmas", templateParams)
+        .then(function (response) {
+        console.log("Email sent successfully", response);
+        msg.style.color = "green";
+        msg.innerHTML = "Message sent successfully!";
+        form.reset();
+        setTimeout(() => (msg.innerHTML = ""), 5000);
+        })
+        .catch(function (error) {
+        console.error("Email failed to send", error);
+        msg.style.color = "red";
+        msg.innerHTML = "Error sending message. Try again later.";
+        });
+    });
+});
