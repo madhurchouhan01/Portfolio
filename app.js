@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(function (response) {
         console.log("Email sent successfully", response);
         msg.style.color = "green";
-        msg.innerHTML = "Message sent successfully!";
+        msg.innerHTML = "Message sent successfully! 😊";
         form.reset();
         setTimeout(() => (msg.innerHTML = ""), 5000);
         })
