@@ -468,8 +468,8 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .chatbot-container {
-        width: calc(100vw - 70px);
-        height: calc(100vh - 480px);
+        width: calc(100vw - 20px);
+        height: calc(100vh - 100px);
         right: 10px;
         bottom: 80px;
         border-radius: 15px;
