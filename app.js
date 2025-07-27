@@ -289,6 +289,258 @@ document.addEventListener("touchend", function (event) {
 
 
 // chatbot 👽
+// class PortfolioChatbot {
+//     constructor() {
+//         this.isOpen = false;
+//         this.conversationHistory = [];
+//         this.apiUrl = 'https://portfolio-backend-cg49.onrender.com'; // Change this to your backend URL
+        
+//         this.initializeElements();
+//         this.attachEventListeners();
+//         this.showWelcomeMessage();
+        
+//         console.log('🤖 Madhur\'s Portfolio Chatbot initialized!');
+//     }
+
+//     initializeElements() {
+//         this.toggleBtn = document.getElementById('chatbotToggle');
+//         this.container = document.getElementById('chatbotContainer');
+//         this.messagesArea = document.getElementById('chatbotMessages');
+//         this.input = document.getElementById('chatbotInput');
+//         this.sendBtn = document.getElementById('chatbotSendBtn');
+//     }
+
+//     attachEventListeners() {
+//         // Toggle chatbot
+//         this.toggleBtn.addEventListener('click', () => this.toggleChatbot());
+        
+//         // Send message
+//         this.sendBtn.addEventListener('click', () => this.sendMessage());
+        
+//         // Enter key to send (Shift+Enter for new line)
+//         this.input.addEventListener('keydown', (e) => {
+//             if (e.key === 'Enter' && !e.shiftKey) {
+//                 e.preventDefault();
+//                 this.sendMessage();
+//             }
+//         });
+
+//         // Auto-resize textarea
+//         this.input.addEventListener('input', () => this.autoResizeTextarea());
+
+        
+//         // Close chatbot when clicking outside
+//         document.addEventListener('click', (e) => {
+//             if (this.isOpen && 
+//                 !this.container.contains(e.target) && 
+//                 !this.toggleBtn.contains(e.target)) {
+//                     this.toggleChatbot();
+//             }
+//         });
+//         // Quick action buttons
+//         document.addEventListener('click', (e) => {
+//             if (e.target.classList.contains('quick-action-btn')) {
+//                 const message = e.target.getAttribute('data-message');
+//                 this.input.value = message;
+//                 this.sendMessage();
+//             }
+//         });
+//     }
+
+//     toggleChatbot() {
+//         this.isOpen = !this.isOpen;
+//         this.container.classList.toggle('active', this.isOpen);
+//         this.toggleBtn.classList.toggle('active', this.isOpen);
+        
+//         if (this.isOpen) {
+//             setTimeout(() => this.input.focus(), 300);
+//         }
+//     }
+
+//     autoResizeTextarea() {
+//         this.input.style.height = 'auto';
+//         this.input.style.height = Math.min(this.input.scrollHeight, 80) + 'px';
+//     }
+
+//     async sendMessage() {
+//         const message = this.input.value.trim();
+//         if (!message) return;
+
+//         // Disable input
+//         this.setInputState(false);
+
+//         // Add user message
+//         this.addMessage(message, 'user');
+//         this.input.value = '';
+//         this.autoResizeTextarea();
+
+//         // Show typing indicator
+//         const typingId = this.addTypingIndicator();
+
+//         try {
+//             const response = await this.callChatAPI(message);
+//             this.removeTypingIndicator(typingId);
+//             this.addMessage(response, 'bot');
+//         } catch (error) {
+//             this.removeTypingIndicator(typingId);
+//             this.addErrorMessage("I'm having some technical difficulties right now. Please try again in a moment!");
+//             console.error('Chat API error:', error);
+//         } finally {
+//             this.setInputState(true);
+//         }
+//     }
+
+//     async callChatAPI(message) {
+//         try {
+//             const response = await fetch(`${this.apiUrl}/ask`, {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                 },
+//                 body: JSON.stringify({
+//                     message: message,
+//                     history: this.conversationHistory
+//                 })
+//             });
+//             console.log(body)
+
+//             if (!response.ok) {
+//                 throw new Error(`HTTP error! status: ${response.status}`);
+//             }
+
+//             const data = await response.json();
+//             // this.addMessage('bot', data.answer);
+//             // Update conversation history
+//             this.conversationHistory.push(
+//                 { role: 'user', content: message },
+//                 { role: 'assistant', content: data.response }
+//             );
+
+//             // Keep only last 10 messages for context
+//             if (this.conversationHistory.length > 10) {
+//                 this.conversationHistory = this.conversationHistory.slice(-10);
+//             }
+
+//             return data.answer;
+//         } catch (error) {
+//             // Fallback response when API is not available
+//             return this.getFallbackResponse(message);
+//         }
+//     }
+
+//     getFallbackResponse(message) {
+//         const lowerMessage = message.toLowerCase();
+        
+//         if (lowerMessage.includes('project')) {
+//             return "Hi! I'm Madhur. I've worked on several exciting projects including QueryVerse (natural language to SQL), an AI Meeting Scheduler Bot, and an Intelligent Email Generation System. Each project showcases my skills in AI, ML, and full-stack development. My chatbot backend isn't running right now, but you can check out my portfolio for detailed project information!";
+//         } else if (lowerMessage.includes('skill') || lowerMessage.includes('technology')) {
+//             return "I specialize in Python, AI/ML technologies, and have experience with frameworks like CrewAI, PydanticAI, TensorFlow, FastAPI, and many more. I'm passionate about AI Agents, Deep Learning, and building scalable backend systems. Check out my portfolio for the complete list of my technical skills!";
+//         } else if (lowerMessage.includes('experience') || lowerMessage.includes('work')) {
+//             return "I'm currently working as a Data Scientist - Trainee at Xalt Analytics Pvt. Ltd in Indore, where I develop AI-powered solutions like UX Weaver and automated video ad creation systems. I also have internship experience and have been involved in various leadership roles at GDSC.";
+//         } else {
+//             return "Hi! I'm Madhur Chouhan, an AI Engineer and Data Scientist. I'm passionate about creating innovative AI solutions and have experience in machine learning, deep learning, and full-stack development. Feel free to ask me about my projects, skills, or experience! (Note: My chatbot backend seems to be offline right now, but I'd love to chat!)";
+//         }
+//     }
+
+//     addMessage(content, sender) {
+//         const messageDiv = document.createElement('div');
+//         messageDiv.className = `message ${sender}-message`;
+
+//         if (sender === 'bot') {
+//             const html = DOMPurify.sanitize(marked.parse(content)); // ✅ Convert markdown -> HTML safely
+//             messageDiv.innerHTML = html;
+//         } else {
+//             messageDiv.textContent = content; // Plain for user input
+//         }
+
+//         this.messagesArea.appendChild(messageDiv);
+//         this.scrollToBottom();
+
+//         return messageDiv;
+//     }
+
+//     addErrorMessage(content) {
+//         const errorDiv = document.createElement('div');
+//         errorDiv.className = 'error-message';
+//         errorDiv.textContent = content;
+        
+//         this.messagesArea.appendChild(errorDiv);
+//         this.scrollToBottom();
+        
+//         return errorDiv;
+//     }
+
+//     addTypingIndicator() {
+//         const typingDiv = document.createElement('div');
+//         typingDiv.className = 'typing-indicator';
+//         typingDiv.innerHTML = `
+//             <div class="typing-dots">
+//                 <span></span>
+//                 <span></span>
+//                 <span></span>
+//             </div>
+//         `;
+        
+//         this.messagesArea.appendChild(typingDiv);
+//         this.scrollToBottom();
+        
+//         return typingDiv;
+//     }
+
+//     removeTypingIndicator(typingElement) {
+//         if (typingElement && typingElement.parentNode) {
+//             typingElement.parentNode.removeChild(typingElement);
+//         }
+//     }
+
+//     setInputState(enabled) {
+//         this.input.disabled = !enabled;
+//         this.sendBtn.disabled = !enabled;
+//         if (enabled) {
+//             this.input.focus();
+//         }
+//     }
+
+//     scrollToBottom() {
+//         this.messagesArea.scrollTop = this.messagesArea.scrollHeight;
+//     }
+
+//     showWelcomeMessage() {
+//         setTimeout(() => {
+//             this.addMessage("Hey there! 👋 I'm Madhur, and I'm excited to chat with you! Feel free to ask me about my AI projects, technical skills, work experience, or anything else you'd like to know about my journey in AI and Data Science! 🚀", 'bot');
+//         }, 1500);
+//     }
+// }
+
+// // Initialize chatbot when DOM is loaded
+// document.addEventListener('DOMContentLoaded', () => {
+//     new PortfolioChatbot();
+// });
+
+// // Add some CSS animations on page load
+// window.addEventListener('load', () => {
+//     setTimeout(() => {
+//         document.querySelector('.chatbot-toggle').style.animation = 'pulse 2s infinite';
+//     }, 2000);
+// });
+// function minimizeChatbot() {
+//     const chatbot = document.getElementById('chatbotContainer'); // Corrected ID
+//     chatbot.style.display = 'none';
+
+//     const toggle = document.querySelector('.chatbot-toggle');
+//     if (toggle) toggle.style.display = 'block';
+// }
+
+// function showChatbot() {
+//     const chatbot = document.getElementById('chatbotContainer');
+//     chatbot.style.display = 'block';
+
+//     const toggle = document.querySelector('.chatbot-toggle');
+//     if (toggle) toggle.style.display = 'none';
+// }
+
+
+// chatbot 👽
 class PortfolioChatbot {
     constructor() {
         this.isOpen = false;
@@ -308,11 +560,17 @@ class PortfolioChatbot {
         this.messagesArea = document.getElementById('chatbotMessages');
         this.input = document.getElementById('chatbotInput');
         this.sendBtn = document.getElementById('chatbotSendBtn');
+        this.minimizeBtn = document.getElementById('chatbotMinimize'); // New minimize button
     }
 
     attachEventListeners() {
         // Toggle chatbot
         this.toggleBtn.addEventListener('click', () => this.toggleChatbot());
+        
+        // Minimize chatbot (mobile)
+        if (this.minimizeBtn) {
+            this.minimizeBtn.addEventListener('click', () => this.minimizeChatbot());
+        }
         
         // Send message
         this.sendBtn.addEventListener('click', () => this.sendMessage());
@@ -329,14 +587,16 @@ class PortfolioChatbot {
         this.input.addEventListener('input', () => this.autoResizeTextarea());
 
         
-        // Close chatbot when clicking outside
+        // Close chatbot when clicking outside (desktop only)
         document.addEventListener('click', (e) => {
             if (this.isOpen && 
                 !this.container.contains(e.target) && 
-                !this.toggleBtn.contains(e.target)) {
+                !this.toggleBtn.contains(e.target) &&
+                window.innerWidth > 768) { // Only close on desktop
                     this.toggleChatbot();
             }
         });
+        
         // Quick action buttons
         document.addEventListener('click', (e) => {
             if (e.target.classList.contains('quick-action-btn')) {
@@ -355,6 +615,12 @@ class PortfolioChatbot {
         if (this.isOpen) {
             setTimeout(() => this.input.focus(), 300);
         }
+    }
+
+    minimizeChatbot() {
+        this.isOpen = false;
+        this.container.classList.remove('active');
+        this.toggleBtn.classList.remove('active');
     }
 
     autoResizeTextarea() {
@@ -523,3 +789,12 @@ window.addEventListener('load', () => {
         document.querySelector('.chatbot-toggle').style.animation = 'pulse 2s infinite';
     }, 2000);
 });
+
+// Legacy function for backward compatibility
+function minimizeChatbot() {
+    const chatbot = document.getElementById('chatbot');
+    chatbot.style.display = 'none';
+
+    const toggle = document.querySelector('.chatbot-toggle');
+    if (toggle) toggle.style.display = 'block';
+}

@@ -466,7 +466,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .chatbot-container {
         width: calc(100vw - 20px);
         height: calc(100vh - 100px);
@@ -479,7 +479,102 @@ body {
         right: 20px;
         bottom: 20px;
     }
+} */
+
+
+/* Minimize button styles */
+.chatbot-minimize {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: none; /* Hidden on desktop by default */
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
 }
+
+.chatbot-minimize:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatbot-minimize svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* Header adjustments for minimize button */
+.chatbot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.chatbot-header-content {
+    flex: 1;
+}
+
+.chatbot-header h3 {
+    margin: 0;
+}
+
+.chatbot-header p {
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chatbot-container {
+        width: 100vw !important;
+        height: 100vh !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        border-radius: 0 !important;
+        position: fixed !important;
+        z-index: 10000 !important;
+    }
+   
+    .chatbot-toggle {
+        right: 20px;
+        bottom: 20px;
+        z-index: 9999;
+    }
+
+    /* Show minimize button on mobile */
+    .chatbot-minimize {
+        display: flex !important;
+    }
+
+    /* Adjust header layout for mobile */
+    .chatbot-header {
+        padding: 20px 15px 15px 20px;
+    }
+
+    /* Ensure messages area takes full height on mobile */
+    .chatbot-messages {
+        flex: 1;
+        max-height: calc(100vh - 140px);
+    }
+
+    /* Adjust input area for mobile */
+    .chatbot-input-area {
+        padding: 15px 20px 20px 20px;
+    }
+
+    /* Hide chatbot toggle when chatbot is open on mobile */
+    .chatbot-container.active ~ .chatbot-toggle {
+        display: none;
+    }
+}
+
 
 /* Error State */
 .error-message {

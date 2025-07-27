@@ -88,20 +88,29 @@
             </div>
             <div id="groq-message" class="groq-message">💡 Loading your bright idea...</div>
         </div>
-    <!-- Chatbot Toggle Button -->
+<!-- Chatbot Toggle Button -->
     <button class="chatbot-toggle" id="chatbotToggle" title="Chat with Madhur">
         <svg viewBox="0 0 24 24">
             <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M6,9V7H18V9H6M14,11V13H6V11H14M18,15H6V17H18V15Z" />
         </svg>
     </button>
 
-        <!-- Chatbot Container -->
+    <!-- Chatbot Container -->
     <div class="chatbot-container" id="chatbotContainer">
         <!-- Chatbot Header -->
         <div class="chatbot-header">
-            <div class="chatbot-status"></div>
-            <h3>💬 Chat</h3>
-            <p>Ask me about my experience, skills & projects!</p>
+            <div class="chatbot-header-content">
+                <div class="chatbot-status"></div>
+                <h3>💬 Chat</h3>
+                <p>Ask me about my experience, skills & projects!</p>
+            </div>
+            
+            <!-- Minimize Button (Mobile Only) -->
+            <button class="chatbot-minimize" id="chatbotMinimize" title="Minimize">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19,13H5V11H19V13Z" />
+                </svg>
+            </button>
         </div>
 
         <!-- Messages Area -->
