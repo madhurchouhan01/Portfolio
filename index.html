@@ -20,6 +20,8 @@
 
     <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -79,14 +81,61 @@
         <div class="my-img right">
             <img src="./assets/hi.png" alt="">
         </div>
-<!-- Glowing Bulb in Bottom Right Corner -->
-<div class="floating-bulb" id="bulb">
-  <div class="bulb-glow"></div>
-  <img src="./assets/bulb.png" alt="Glowing Bulb" class="bulb-img" />
-</div>
-<div id="groq-message" class="groq-message">💡 Loading your bright idea...</div>
-
+            <!-- Glowing Bulb in Bottom Right Corner -->
+            <div class="floating-bulb" id="bulb">
+            <div class="bulb-glow"></div>
+            <img src="./assets/bulb.png" alt="Glowing Bulb" class="bulb-img" />
+            </div>
+            <div id="groq-message" class="groq-message">💡 Loading your bright idea...</div>
         </div>
+    <!-- Chatbot Toggle Button -->
+    <button class="chatbot-toggle" id="chatbotToggle" title="Chat with Madhur">
+        <svg viewBox="0 0 24 24">
+            <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M6,9V7H18V9H6M14,11V13H6V11H14M18,15H6V17H18V15Z" />
+        </svg>
+    </button>
+
+        <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <!-- Chatbot Header -->
+        <div class="chatbot-header">
+            <div class="chatbot-status"></div>
+            <h3>💬 Chat Me</h3>
+            <p>Ask me about my experience, skills & projects!</p>
+        </div>
+
+        <!-- Messages Area -->
+        <div class="chatbot-messages" id="chatbotMessages">
+            <!-- <div class="welcome-message">
+                👋 Hi! I'm Madhur. Feel free to ask me anything about my background, projects, or technical expertise!
+            </div> -->
+            
+            <div class="quick-actions">
+                <button class="quick-action-btn" data-message="Tell me about your projects">🚀 Projects</button>
+                <button class="quick-action-btn" data-message="What are your technical skills?">⚡ Skills</button>
+                <!-- <button class="quick-action-btn" data-message="Tell me about your experience">💼 Experience</button> -->
+                <button class="quick-action-btn" data-message="What's your educational background?">🎓 Education</button>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chatbot-input-area">
+            <div class="chatbot-input-wrapper">
+                <textarea 
+                    class="chatbot-input" 
+                    id="chatbotInput" 
+                    placeholder="Type your message..."
+                    rows="1"
+                    maxlength="500"
+                ></textarea>
+                <button class="chatbot-send-btn" id="chatbotSendBtn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
 
     </section>
     <!-- ask me about design -->
