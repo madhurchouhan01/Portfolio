@@ -48,10 +48,10 @@ ScrollReveal().reveal('.bottom', {origin: 'bottom'})
 
 
 const typed = new Typed('.multiple-text', {
-    strings: ['a Data Scientist','an AI Engineer', 'an ML Engineer'],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
+    strings: ['Agentic Workflows', 'Multimodal Pipelines', 'LLM Orchestration', 'Production Systems', 'Asynchronous Pipelines', 'Enterprise AI', 'Production-Grade AI', 'Prompt Engineering', 'Multi-Agent Systems', 'Autonomous AI Agents'],
+    typeSpeed: 80,
+    backSpeed: 50,
+    backDelay: 1200,
     loop: true
 })
 

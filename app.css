@@ -1169,16 +1169,72 @@ section {
     margin-bottom: 2rem;
 }
 
+.home-content .home-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.8rem 2rem;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 50px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 2.2rem;
+    width: fit-content;
+    box-shadow: 0 4px 15px -3px rgba(99, 102, 241, 0.12);
+}
+
+.dark-mode .home-content .home-badge {
+    background: rgba(56, 189, 248, 0.06);
+    border-color: rgba(56, 189, 248, 0.2);
+    box-shadow: 0 4px 15px -3px rgba(56, 189, 248, 0.12);
+}
+
+.home-content .home-badge span {
+    color: var(--main-color);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--main-color), #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .home-content .home-badge span {
+    background: linear-gradient(135deg, var(--main-color), #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-content .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981; /* Emerald active dot */
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px #10b981, 0 0 20px rgba(16, 185, 129, 0.4);
+    animation: badgePulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes badgePulse {
+    0% { transform: scale(0.9); opacity: 0.6; box-shadow: 0 0 6px #10b981; }
+    100% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 12px #10b981, 0 0 22px rgba(16, 185, 129, 0.6); }
+}
+
 .home-content .text-animate {
-    
-    font-size: 3.2rem;
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-height: 3.6rem; /* Prevent layout shifting */
 }
 
 .home-content .text-animate span {
-    font-size: 3.2rem;
-    font-weight: 700;
+    font-size: 2.6rem;
+    font-weight: 800;
     color: var(--main-color);
-    /* -webkit-text-stroke: .7px var(--main-color); */
 }
 
 .home-content p {
@@ -2657,18 +2713,31 @@ section {
         justify-content: space-evenly;        
     }
 
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
     .home-content h1 {
+        text-align: center;
         margin-bottom: 2rem;
     }
 
     .home-content p {
-        text-align: justify;
+        text-align: center;
         overflow: hidden;
     }
 
+    .home-content .home-badge {
+        margin: 0.5rem auto 2.2rem;
+        display: inline-flex;
+    }
+
     .home-content .text-animate {
-        margin: 0 auto;
-        text-align: center;
+        margin: 0.5rem auto;
+        justify-content: center;
     }
 
     .home-stats {
