@@ -2728,6 +2728,21 @@ section {
         width: 5rem;
         height: 5rem;
     }
+
+    /* Decrease bulb size and adjust glowing orbits on mobile */
+    .floating-bulb {
+        width: 55px !important;
+        height: 55px !important;
+    }
+    .floating-bulb::after {
+        inset: -8px !important;
+    }
+    .floating-bulb::before {
+        inset: -4px !important;
+    }
+    .floating-bulb-tooltip {
+        display: none !important;
+    }
 } 
 
 @media (max-width: 654px) {
