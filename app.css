@@ -93,18 +93,20 @@ body {
 .bg-orb {
     position: fixed;
     border-radius: 50%;
-    filter: blur(120px);
+    filter: blur(40px); /* Smaller blur to prevent rendering context crashes on mobile */
     z-index: -1;
     pointer-events: none;
     animation: float 20s infinite alternate ease-in-out;
     opacity: 0.55;
     transition: background 0.5s ease;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
 }
 
 .orb-1 {
     width: 50vw;
     height: 50vw;
-    background: var(--orb-1);
+    background: radial-gradient(circle, var(--orb-1) 0%, transparent 70%);
     top: -10%;
     left: -10%;
 }
@@ -112,7 +114,7 @@ body {
 .orb-2 {
     width: 45vw;
     height: 45vw;
-    background: var(--orb-2);
+    background: radial-gradient(circle, var(--orb-2) 0%, transparent 70%);
     bottom: -10%;
     right: -10%;
     animation-delay: -5s;
@@ -121,7 +123,7 @@ body {
 .orb-3 {
     width: 40vw;
     height: 40vw;
-    background: var(--orb-3);
+    background: radial-gradient(circle, var(--orb-3) 0%, transparent 70%);
     top: 40%;
     left: 30%;
     animation-delay: -10s;
@@ -2519,8 +2521,10 @@ section {
 
     /* Adjust background orbs on mobile to make glassmorphism look stunning */
     .bg-orb {
-        filter: blur(80px) !important;
+        filter: blur(25px) !important; /* Low blur + radial gradient is highly performant and doesn't crash Safari */
         opacity: 0.65 !important;
+        transform: translate3d(0, 0, 0) !important;
+        -webkit-transform: translate3d(0, 0, 0) !important;
     }
     .orb-1 {
         width: 90vw !important;
@@ -2558,6 +2562,8 @@ section {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        transform: translate3d(0, 0, 0) !important;
+        -webkit-transform: translate3d(0, 0, 0) !important;
     }
 
     .dark-mode .header {
@@ -2589,7 +2595,8 @@ section {
         
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-15px) scale(0.98);
+        transform: translateY(-15px) scale(0.98) translateZ(0);
+        -webkit-transform: translateY(-15px) scale(0.98) translateZ(0);
         transform-origin: top center;
         transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         pointer-events: none;
@@ -2605,7 +2612,8 @@ section {
     .navbar.active {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1) translateZ(0);
+        -webkit-transform: translateY(0) scale(1) translateZ(0);
         pointer-events: auto;
     }
 
