@@ -2517,12 +2517,39 @@ section {
         overflow-x: hidden;
     } 
 
+    /* Adjust background orbs on mobile to make glassmorphism look stunning */
+    .bg-orb {
+        filter: blur(80px) !important;
+        opacity: 0.65 !important;
+    }
+    .orb-1 {
+        width: 90vw !important;
+        height: 90vw !important;
+        top: -5% !important;
+        left: -15% !important;
+    }
+    .orb-2 {
+        width: 85vw !important;
+        height: 85vw !important;
+        bottom: -5% !important;
+        right: -15% !important;
+    }
+    .orb-3 {
+        width: 80vw !important;
+        height: 80vw !important;
+        top: 35% !important;
+        left: 10% !important;
+    }
+
     .header {
-        background: var(--glass-bg);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        border-bottom: 1px solid var(--glass-border-bottom);
-        box-shadow: var(--glass-shadow);
+        background: rgba(255, 255, 255, 0.72) !important;
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05), var(--glass-shadow) !important;
         width: 100%;
         margin: 0;
         left: 0;
@@ -2534,9 +2561,9 @@ section {
     }
 
     .dark-mode .header {
-        background: var(--glass-bg);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        box-shadow: var(--glass-shadow);
+        background: rgba(10, 10, 15, 0.75) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), var(--glass-shadow) !important;
     }
 
     #theme-toggle {
@@ -2553,11 +2580,11 @@ section {
         left: 0;
         width: 100%;
         padding: 1.5rem 6%;
-        background: var(--glass-bg);
+        background: rgba(255, 255, 255, 0.78);
         backdrop-filter: blur(28px);
         -webkit-backdrop-filter: blur(28px);
-        border-bottom: 1px solid var(--glass-border-bottom);
-        border-top: 1px solid var(--glass-border-top);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        border-top: 1px solid rgba(255, 255, 255, 0.6);
         box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08), var(--glass-shadow);
         
         opacity: 0;
@@ -2569,9 +2596,9 @@ section {
     }
 
     .dark-mode .navbar {
-        background: var(--glass-bg);
-        border-bottom: 1px solid var(--glass-border-bottom);
-        border-top: 1px solid var(--glass-border-top);
+        background: rgba(10, 10, 15, 0.82);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
         box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.4), var(--glass-shadow);
     }
 
