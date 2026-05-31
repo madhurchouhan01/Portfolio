@@ -29,20 +29,27 @@
 </head>
 
 <body>
+    <!-- Background Ambient Orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
     <!-- header design -->
     <header class="header top">
         <link rel="stylesheet" type='text/css'
             href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
         <a href="#" class="logo">Port<span>folio.</span></a>
-        <a><button id="theme-toggle">🌛</button></a>
+        <button id="theme-toggle" aria-label="Toggle Theme">
+            <i class="bx bx-moon"></i>
+        </button>
         <div class="bx bx-menu" id="menu-icon"></div>
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#focus" >Focus</a>
             <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#portfolio">Projects</a>
+            <a href="#education">Journey</a>
+            <a href="#skills">Where I Shine</a>
+            <a href="#projects">Work</a>
             <a href="#contact">Contact me</a>
             <!-- <a href="#contact">Surprise me</a> -->
 
@@ -58,22 +65,35 @@
                 
                 <h1>Hi, I'm <span>Madhur</span></h1>
                 <h3 class="text-animate">I'm <span class="multiple-text"></span></h3>
-                <p style="line-height: 1.5;">This website showcases all of the work I have completed throughout my years
-                    of <span class="para">studies in AI and Data Science</span>.<br>It illustrates the growth and
-                    progress I
-                    have made, as well as the <span class="para">projects</span> I am most proud of. Over the years, I
-                    have devoted <span class="para">time, energy,</span> and <span class="para">effort</span> and have
-                    <span class="para">learned</span> more than ever before. Reflecting on my work has shown me how far
-                    I have come as both a <span class="para">student</span> and a <span class="para">person</span>.
+                <p style="line-height: 1.65;">AI Engineer focused on <strong>agentic systems</strong>, <strong>multimodal AI</strong>, and <strong>LLM-powered product development</strong>. Proven track record of taking generative AI from concept to production — with deep hands-on experience across CrewAI, LangGraph, FastAPI, Docker, and vector databases.
                 </p>
-                <br>
-                <br>
+                <div class="home-stats">
+                    <div class="home-stat">
+                        <span class="stat-num">2+</span>
+                        <span class="stat-label">Production<br>AI Pipelines</span>
+                    </div>
+                    <div class="home-stat-divider"></div>
+                    <div class="home-stat">
+                        <span class="stat-num">1+</span>
+                        <span class="stat-label">Year at<br>Xalt Analytics</span>
+                    </div>
+                    <div class="home-stat-divider"></div>
+                    <div class="home-stat">
+                        <span class="stat-num">B.Tech</span>
+                        <span class="stat-label">AI & Data<br>Science</span>
+                    </div>
+                </div>
                 <div class="btn-box">
                     <a href="#contact" class="btn">Hire Me</a>
                     <a href="https://docs.google.com/document/d/1uwJ8qmh0RsUOXRYN_L5Db0e_BqLoGfHFs-op07xKnGs/edit?tab=t.0"
                     class="btn" target="_blank">Resume</a>
                 </div>
-                <br>
+                <div class="home-sci">
+                    <a href="https://github.com/madhurchouhan01" target="_blank"><i class="bx bxl-github"></i></a>
+                    <a href="https://www.linkedin.com/in/madhur-chouhan-9a9bab228" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="mailto:madhur.ai.atwork@gmail.com"><i class="bx bx-envelope"></i></a>
+                    <a href="https://www.instagram.com/madhur_chouhan_/" target="_blank"><i class="bx bxl-instagram"></i></a>
+                </div>
                 <br>
             </div>
         </div>
@@ -83,10 +103,11 @@
         </div>
             <!-- Glowing Bulb in Bottom Right Corner -->
             <div class="floating-bulb" id="bulb">
-            <div class="bulb-glow"></div>
-            <img src="./assets/bulb.png" alt="Glowing Bulb" class="bulb-img" />
+                <div class="bulb-glow"></div>
+                <img src="./assets/bulb.png" alt="Glowing Bulb" class="bulb-img" />
+                <span class="floating-bulb-tooltip">💡 Drag or click me!</span>
             </div>
-            <div id="groq-message" class="groq-message">💡 Loading your bright idea...</div>
+            <div id="groq-message" class="groq-message">💡 Click the bulb for an AI fact!</div>
         </div>
 <!-- Chatbot Toggle Button -->
     <button class="chatbot-toggle" id="chatbotToggle" title="Chat with Madhur">
@@ -147,263 +168,590 @@
     </div>
 
     </section>
-    <!-- ask me about design -->
-    <section class="askme" id="focus">
-        <div class="askme-info">
-            <h1 class="heading"><span>Ask</span>me about</h1>
-            <div class="line"></div>
-        <p>I specialize in various domains of technology and AI, ready to assist you with deep knowledge and experience.
-        </p>
-        <div class="card-container">
-            <div class="card">
-                <div class="icon-wrapper">🤖</div>
-                <h3>AI Agents</h3>
-                <p>Explore intelligent autonomous systems that reason, plan, and act toward long-term goals using
-                    powerful language models</p>
+    <!-- focus section design -->
+    <section class="focus-section" id="focus">
+        <div class="focus-header">
+            <div class="focus-badge">What I Do</div>
+            <h2 class="focus-title">Areas of <span>Expertise</span></h2>
+            <p class="focus-subtitle">I specialize in building intelligent systems across the full AI stack — from raw data to production-ready models and APIs.</p>
+        </div>
+
+        <div class="focus-grid">
+            <!-- Large card — Agentic AI -->
+            <div class="focus-card focus-card--large">
+                <div class="focus-card__icon-wrap" style="--card-color: #6366f1;">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="currentColor"/><circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.4"/></svg>
+                </div>
+                <div class="focus-card__accent" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"></div>
+                <h3>Agentic AI Systems</h3>
+                <p>Building autonomous AI agents that reason, plan, and act — from single-agent pipelines with tool-calling to orchestrated multi-agent workflows solving complex, real-world tasks.</p>
+                <div class="focus-card__tags">
+                    <span>CrewAI</span><span>LangGraph</span><span>PydanticAI</span><span>Agno</span>
+                </div>
+                <div class="focus-card__shine"></div>
             </div>
-            <div class="card">
-                <div class="icon-wrapper">📊</div>
-                <h3>Machine Learning</h3>
-                <p>I build ML systems that learn from data to deliver predictive analytics, automation, and real-world
-                    impact.</p>
+
+            <!-- Multimodal AI -->
+            <div class="focus-card">
+                <div class="focus-card__icon-wrap" style="--card-color: #ec4899;">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 3H3C2 3 1 4 1 5v14c0 1.1.9 2 2 2h18c1 0 2-1 2-2V5c0-1-1-2-2-2zM5 17l3.5-4.5 2.5 3.01L14.5 11l4.5 6H5z" fill="currentColor"/></svg>
+                </div>
+                <div class="focus-card__accent" style="background: linear-gradient(135deg, #ec4899, #db2777);"></div>
+                <h3>Multimodal AI</h3>
+                <p>Production pipelines combining vision, audio, and language models — including AI video generation workflows and multimodal ad creative systems.</p>
+                <div class="focus-card__tags">
+                    <span>Whisper</span><span>OpenCV</span><span>MoviePy</span>
+                </div>
+                <div class="focus-card__shine"></div>
             </div>
-            <div class="card">
-                <div class="icon-wrapper">🧠</div>
-                <h3>Deep Learning</h3>
-                <p>From CNNs to LLMs, I design and fine-tune deep learning models for tasks like vision, NLP, and
-                    representation learning</p>
+
+            <!-- LLM Engineering -->
+            <div class="focus-card">
+                <div class="focus-card__icon-wrap" style="--card-color: #f59e0b;">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6zm0 10a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm0-6a2 2 0 1 0 2 2 2 2 0 0 0-2-2z" fill="currentColor"/></svg>
+                </div>
+                <div class="focus-card__accent" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></div>
+                <h3>LLM Engineering</h3>
+                <p>Prompt engineering, fine-tuning, RAG pipelines, and LLM evaluation — turning raw models into reliable, production-ready intelligent components.</p>
+                <div class="focus-card__tags">
+                    <span>Prompt Eng.</span><span>RAG</span><span>Fine-tuning</span>
+                </div>
+                <div class="focus-card__shine"></div>
             </div>
-            <div class="card">
-                <div class="icon-wrapper">☁️</div>
-                <h3>Backend Development</h3>
-                <p>I develop scalable, cloud-native backend services and APIs using modern server-side technologies and
-                    databases.</p>
+
+            <!-- Backend & Infrastructure — Large card -->
+            <div class="focus-card focus-card--large">
+                <div class="focus-card__icon-wrap" style="--card-color: #10b981;">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 13h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1zm-1 7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v4zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v8zm1-14a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-6z" fill="currentColor"/></svg>
+                </div>
+                <div class="focus-card__accent" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+                <h3>Backend & AI Infrastructure</h3>
+                <p>Designing async, production-grade backends that support concurrent AI workloads — from job orchestration with Celery + Redis to containerized microservices deployed on cloud infrastructure.</p>
+                <div class="focus-card__tags">
+                    <span>FastAPI</span><span>Docker</span><span>Celery</span><span>Redis</span>
+                </div>
+                <div class="focus-card__shine"></div>
             </div>
         </div>
-    </div>
-
     </section>
 
 
     <!-- about section design -->
     <section class="about" id="about">
-
-        <div class="about-img left">
-            <img src="./assets/chill.png" alt="" class="about-img-2">
-            <span class="circle-spin"></span>
-        </div>
-
-        <div class="about-details right">
-            <h2 class="heading">About <span>Me</span>
-            </h2>
-            <div class="line"></div>
-            <div class="about-content">
-                <h3>A Data Scientist !</h3>
-                <hr>
-                <div class="about-para">
-
-                    <p style="line-height: 1.5;">I have completed Bachelor of Technology in <span
-                            class="para1">Artificial Intelligence and Data Science.</span> I have experience with
-                        <span class="para2">Python</span>
-                        <span class="para3">LLMs</span>
-                        <span class="para4">Prompt Engineering</span>
-                        <span class="para6">Fine-tuning</span>
-                        <span class="para4">Agentic AI</span>
-                        <span class="para8">Natural Language Processing</span>
-                        <span class="para7">Exploratory Data Analysis</span>
-                        <span class="para2">Statistics</span>
-                        <span class="para1">Cloud Computing</span>
-
-                    </p>
-                    <p style="line-height: 1.5;">I have been a two-time consecutive member of the <span
-                            class="para3">GDSC Core team</span> at my college. Previously, I have served as a <span
-                            class="para4">PR and Outreach</span> core member and currently work in the <span
-                            class="para5">Web Development</span> domain.</p>
-                    <p style="line-height: 1.5;">Apart from tech, I have successfully coordinated internal and external
-                        <span class="para2">college fest promotion</span> efforts, covering institutions across <span
-                            class="para5">Pune, Shirdi, Kopargaon, and Bhusawal.</span>
-                    </p>
-                    <p style="line-height: 1.5;">I am a passionate individual with strong <span
-                            class="para1">interpersonal</span> and <span class="para6">communication skills</span>. I am
-                        self-motivated and proactive.
-                        <br><br>
-                        Feel free to <span class="para7">connect</span>✨
-                    </p>
+        <div class="about-container glass">
+            <div class="about-left">
+                <div class="about-img">
+                    <img src="./assets/chill.png" alt="Madhur Chouhan" class="about-profile-pic">
+                    <div class="about-glow"></div>
+                </div>
+                <div class="about-socials">
+                    <a href="https://www.linkedin.com/in/madhur-chouhan-9a9bab228" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="mailto:madhur.ai.atwork@gmail.com"><i class="bx bx-envelope"></i></a>
+                    <a href="https://www.instagram.com/madhur_chouhan_/" target="_blank"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://github.com/madhurchouhan01" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="https://leetcode.com/madhurchouhan02/" title="Coding Profiles" target="_blank"><i class='bx bx-code-alt'></i></a>
                 </div>
             </div>
-        </div>
-        <div class="home-sci">
-            <!-- <a href="https://www.facebook.com/madhur.chouhan.31/" target="_blank"><i class="bx bxl-facebook"></i></a> -->
-            <a href="https://www.linkedin.com/in/madhur-chouhan-9a9bab228" target="_blank"><i
-                    class="bx bxl-linkedin"></i></a>
-            <a href="https://twitter.com/madhur_py" target="_blank"><i class="bx bxl-twitter"></i></a>
-            <a href="https://www.instagram.com/madhur_chouhan_/" target="_blank"><i class="bx bxl-instagram"></i></a>
-            <a href="https://github.com/madhurchouhan01" target="_blank"><i class='bx bxl-github'></i></a>
-            <a href="https://leetcode.com/madhurchouhan02/" title="Coding Profiles" target="_blank"><i
-                    class='bx bx-code-alt'></i></a>
-        </div>
-    </section>
+            <div class="about-right">
+                <h2 class="heading-about">About <span>Me</span></h2>
+                <div class="about-content-inner">
+                    <h3 class="about-subtitle">AI Engineer · Data Scientist · Agentic AI Builder</h3>
+                    <div class="about-bio">
+                        <p>I'm an AI Engineer with a <strong>B.Tech in Artificial Intelligence and Data Science</strong> from CDGI, Indore. I specialize in <strong>agentic systems</strong>, <strong>multimodal AI</strong>, and production-grade <strong>LLM-powered products</strong> — taking ideas from architecture through deployment.</p>
+                        
+                        <p>Currently at <strong>Xalt Analytics</strong>, I've built and shipped production GenAI pipelines for ad-tech: an AI-powered video generation system that reduced 3-day production cycles to under 5 minutes, and a competitor ad intelligence platform that scrapes and recreates 20–40 ads per job in ~30–45 seconds.</p>
 
-    <!-- education section design -->
-    <section class="education" id="education">
-        <div class="education-row">
-            <div class="education-column bottom">
-                <h3 class="title">Academics</h3>
-                <div class="education-box">
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class="bx bxs-calendar"></i>2021 - 2025</div>
-                            <h3>B.Tech AI and Data Science - CDGI, Indore</h3>
-                            <p>CGPA - 7.4</p>
+                        <div class="skills-tags-container">
+                            <span class="skill-tag">CrewAI</span>
+                            <span class="skill-tag">LangGraph</span>
+                            <span class="skill-tag">PydanticAI</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Multimodal AI</span>
+                            <span class="skill-tag">RAG</span>
+                            <span class="skill-tag">Vector DBs</span>
+                            <span class="skill-tag">Celery + Redis</span>
+                        </div>
+                        
+                        <div class="about-cta">
+                            <a href="#contact" class="btn-about">Let's Connect <i class="bx bx-right-arrow-alt"></i></a>
                         </div>
                     </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class="bx bxs-calendar"></i>2019 - 2021</div>
-                            <h3>Higher Secondary - Lokmanya Tilak School, Ujjain</h3>
-                            <p>Grade - 89.4%</p>
-                        </div>
-                    </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class="bx bxs-calendar"></i>2018 - 2019</div>
-                            <h3>High School - King David School, Bhopal</h3>
-                            <p>Grade - 89.8%</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- <img src="./assets/academics.png" alt="" class="about-img-2"> -->
-            </div>
-        </div>
-    </section>
-
-    <section class="skills" id="skills">
-        <h1 class="heading">My <span>Skills</span></h1>
-        <div class="line"></div><br><br><br><br><br>
-        <div class="skill-border right">
-            <div class="b-icons">
-                <div class="img-icon">
-                    <li>
-                        <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
-                    </li>
-                    <li>
-                        <img src="assets/crewai.png" />
-                    </li>                    
-                    <li>
-                        <img src="assets/agentops.png" width="100" height="80"/>
-                    </li>
-                    
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-plain.svg" />
-                    </li>
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" />
-                    </li>
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/anaconda/anaconda-original.svg" />
-                    </li>
-                    <li>
-                        <img src="assets/hf-logo.png" alt="Logo" width="100" height="80" />
-                    </li>
-                    <li>
-                        <img src="assets/langchain-color.svg" alt="Logo" width="150" height="90" />
-                    </li>
-                    <li>
-                        <img src="assets/ollama.png" alt="Logo" width="150" height="90" />
-                    </li>
-                    <li>
-                        <img src="assets/groq.png" alt="Logo" width="150" height="90" />
-                    </li>
-                    <li>
-                        <img src="assets/cohere-color.svg" alt="Logo" width="150" height="90" />
-                    </li>
-                    <li>
-                        <img src="assets/agno_agi_logo.jpg" alt="Logo" width="150" height="90" />
-                    </li>
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" />
-                    </li>
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg" />
-                    </li>
-                    <!-- <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-plain-wordmark.svg" />
-                    </li> -->
-                    <li>
-                        <img
-                            src="assets/flask.png" alt="Logo" width="150" height="90"  />
-                    </li>
-                    <li>
-                        <img src="assets/pydantic-ai-light.svg" />
-                    </li>
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg" />
-                    </li>
-                    <li>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
-                    </li>
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" />
-                    </li>
-                    <li>
-                        <img src="assets/deepface.png" alt="deepface">
-                    </li>
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original-wordmark.svg" />
-                    </li>
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
-                    </li>
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original-wordmark.svg" />
-                    </li>
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" />
-                    </li>
-                    <li>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" />
-                    </li>
-                    <li>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-                    </li>
-                    <li>
-                        <img
-                            src="assets/github.webp" />
-                    </li>
-                    <li>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-                    </li>
-                    <li>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-                    </li>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- portfolio section design -->
-    <section class="projects" id="projects">
-        <h2 class="heading">Latest <span>Work</span></h2>
-        <p>🔨 This section is under Development... For now you can find my projects on
-<a href="https://github.com/madhurchouhan01" target="_blank">gitHub.</a></p>
+    <!-- Timeline: Experience + Education -->
+    <section class="timeline-section" id="education">
+        <div class="timeline-header">
+            <div class="focus-badge">My Journey</div>
+            <h2 class="focus-title">Experience & <span>Education</span></h2>
+            <p class="focus-subtitle">From classroom theory to production AI systems — a snapshot of my professional and academic journey.</p>
+        </div>
+
+        <div class="timeline-columns">
+
+            <!-- EXPERIENCE COLUMN -->
+            <div class="timeline-col">
+                <div class="timeline-col__label">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.9 7 2 7.9 2 9v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm0 12H4V9h16v10zM12 3H8v2h8V3h-4z" fill="currentColor"/></svg>
+                    Experience
+                </div>
+
+                <!-- Xalt Analytics — Full-Time -->
+                <div class="tl-item">
+                    <div class="tl-dot tl-dot--active"></div>
+                    <div class="tl-card glass">
+                        <div class="tl-card__top">
+                            <div class="tl-card__company-wrap">
+                                <div class="tl-card__company-icon" style="--ico-color:#6366f1">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="tl-card__role">Data Scientist</h4>
+                                    <span class="tl-card__company">Xalt Analytics Pvt. Ltd</span>
+                                </div>
+                            </div>
+                            <div class="tl-card__meta">
+                                <span class="tl-card__date"><i class="bx bxs-calendar"></i> Apr 2025 – Present</span>
+                                <span class="tl-card__location"><i class="bx bx-map"></i> Indore, IN</span>
+                                <span class="tl-badge tl-badge--active">Full-Time</span>
+                            </div>
+                        </div>
+                        <ul class="tl-card__bullets">
+                            <li>Designing and shipping production GenAI systems for the company's core ad-tech product suite.</li>
+                            <li>Led end-to-end development of <strong>multimodal video generation</strong> and <strong>competitor ad intelligence</strong> pipelines — from architecture through deployment.</li>
+                            <li>Built async job orchestration infrastructure (<strong>Celery + Redis + FastAPI</strong>) supporting concurrent AI workloads in production.</li>
+                        </ul>
+                        <div class="tl-card__tags" style="--tag-color:#6366f1">
+                            <span>GenAI</span><span>FastAPI</span><span>Celery</span><span>Redis</span><span>Ad-Tech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Xalt Analytics — Intern -->
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card glass">
+                        <div class="tl-card__top">
+                            <div class="tl-card__company-wrap">
+                                <div class="tl-card__company-icon" style="--ico-color:#10b981">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.35C18 2.53 15.47 0 12.35 0c-1.7 0-3.23.72-4.35 1.85C6.98.72 5.45 0 3.65 0 .53 0-2 2.53-2 5.65-2 6.12-1.89 6.56-1.82 7H-4v14h28V6H20zM12.35 2c1.57 0 2.65 1.09 2.65 2.65 0 1.32-.89 2.41-2.27 3.35H12v-5.5c0-.03.01-.06.01-.09.07-.23.17-.41.34-.41zM2 17h4v-3H2v-2h4V9H2V7h6v12H2v-2zm8 2V7h4v12h-4zm6 0V7h6v2h-4v3h4v2h-4v3h4v2h-6z"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="tl-card__role">Data Scientist — Intern</h4>
+                                    <span class="tl-card__company">Xalt Analytics Pvt. Ltd</span>
+                                </div>
+                            </div>
+                            <div class="tl-card__meta">
+                                <span class="tl-card__date"><i class="bx bxs-calendar"></i> Jan 2025 – Mar 2025</span>
+                                <span class="tl-card__location"><i class="bx bx-map"></i> Indore, IN</span>
+                                <span class="tl-badge tl-badge--intern">Internship</span>
+                            </div>
+                        </div>
+                        <ul class="tl-card__bullets">
+                            <li>Built <strong>QueryVerse</strong> — a natural-language MySQL agent (CrewAI + Streamlit) that lets non-technical users query databases without writing SQL.</li>
+                            <li>Contributed to a real-world <strong>trading analytics</strong> system by implementing algorithmic logic to process and analyze live financial data for actionable insights.</li>
+                        </ul>
+                        <div class="tl-card__tags" style="--tag-color:#10b981">
+                            <span>CrewAI</span><span>Streamlit</span><span>MySQL</span><span>Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDUCATION COLUMN -->
+            <div class="timeline-col">
+                <div class="timeline-col__label">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 3L1 9l4 2.18V15c0 3.31 3.13 6 7 6s7-2.69 7-6v-3.82L20 9.09V15h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99c0 2.21-2.24 4.01-5 4.01s-5-1.8-5-4v-2.73l5 2.73 5-2.73v2.73z" fill="currentColor"/></svg>
+                    Education
+                </div>
+
+                <!-- B.Tech -->
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card glass">
+                        <div class="tl-card__top">
+                            <div class="tl-card__company-wrap">
+                                <div class="tl-card__company-icon" style="--ico-color:#f59e0b">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="tl-card__role">B.Tech — AI & Data Science</h4>
+                                    <span class="tl-card__company">CDGI, Indore</span>
+                                </div>
+                            </div>
+                            <div class="tl-card__meta">
+                                <span class="tl-card__date"><i class="bx bxs-calendar"></i> 2021 – 2025</span>
+                                <span class="tl-badge" style="background:rgba(245,158,11,0.15);color:#f59e0b;border-color:rgba(245,158,11,0.3)">CGPA 7.4</span>
+                            </div>
+                        </div>
+                        <p class="tl-card__desc">Studied core fundamentals of Artificial Intelligence, Machine Learning, Data Science, and Cloud Computing. Built multiple capstone projects involving NLP and agentic AI systems.</p>
+                        <div class="tl-card__tags" style="--tag-color:#f59e0b">
+                            <span>AI/ML</span><span>Data Science</span><span>Cloud</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Higher Secondary -->
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card glass">
+                        <div class="tl-card__top">
+                            <div class="tl-card__company-wrap">
+                                <div class="tl-card__company-icon" style="--ico-color:#38bdf8">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="tl-card__role">Higher Secondary (12th)</h4>
+                                    <span class="tl-card__company">Lokmanya Tilak School, Ujjain</span>
+                                </div>
+                            </div>
+                            <div class="tl-card__meta">
+                                <span class="tl-card__date"><i class="bx bxs-calendar"></i> 2019 – 2021</span>
+                                <span class="tl-badge" style="background:rgba(56,189,248,0.15);color:#38bdf8;border-color:rgba(56,189,248,0.3)">89.4%</span>
+                            </div>
+                        </div>
+                        <div class="tl-card__tags" style="--tag-color:#38bdf8">
+                            <span>Science</span><span>Mathematics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High School -->
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card glass">
+                        <div class="tl-card__top">
+                            <div class="tl-card__company-wrap">
+                                <div class="tl-card__company-icon" style="--ico-color:#ec4899">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="tl-card__role">High School (10th)</h4>
+                                    <span class="tl-card__company">King David School, Bhopal</span>
+                                </div>
+                            </div>
+                            <div class="tl-card__meta">
+                                <span class="tl-card__date"><i class="bx bxs-calendar"></i> 2018 – 2019</span>
+                                <span class="tl-badge" style="background:rgba(236,72,153,0.15);color:#ec4899;border-color:rgba(236,72,153,0.3)">89.8%</span>
+                            </div>
+                        </div>
+                        <div class="tl-card__tags" style="--tag-color:#ec4899">
+                            <span>Science</span><span>Computers</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <div class="skills-header">
+            <div class="focus-badge">Tech Stack</div>
+            <h2 class="focus-title">My <span>Skills</span></h2>
+            <p class="focus-subtitle">A curated set of tools, frameworks, and technologies I use to build production-grade AI systems.</p>
+        </div>
+
+        <div class="skills-grid">
+
+            <!-- Languages -->
+            <div class="sk-card glass" style="--sk-color: #6366f1;">
+                <div class="sk-card__header">
+                    <div class="sk-card__icon" style="--sk-color: #6366f1;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                    </div>
+                    <h3>Languages</h3>
+                </div>
+                <div class="sk-items">
+                    <div class="sk-item sk-item--primary">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+                        <span>Python</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                        <span>C++</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent Frameworks -->
+            <div class="sk-card glass" style="--sk-color: #8b5cf6;">
+                <div class="sk-card__header">
+                    <div class="sk-card__icon" style="--sk-color: #8b5cf6;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/><circle cx="12" cy="12" r="3" opacity="0.4"/></svg>
+                    </div>
+                    <h3>Agent Frameworks</h3>
+                </div>
+                <div class="sk-items">
+                    <div class="sk-item sk-item--primary">
+                        <img src="assets/crewai.png" alt="CrewAI">
+                        <span>CrewAI</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="assets/langchain-color.svg" alt="LangGraph">
+                        <span>LangGraph</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="assets/pydantic-ai-light.svg" alt="PydanticAI">
+                        <span>PydanticAI</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="assets/agno_agi_logo.jpg" alt="Agno">
+                        <span>Agno</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend & APIs -->
+            <div class="sk-card glass" style="--sk-color: #10b981;">
+                <div class="sk-card__header">
+                    <div class="sk-card__icon" style="--sk-color: #10b981;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 13h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1zm-1 7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v4zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v8zm1-14a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-6z"/></svg>
+                    </div>
+                    <h3>Backend & APIs</h3>
+                </div>
+                <div class="sk-items">
+                    <div class="sk-item sk-item--primary">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="FastAPI">
+                        <span>FastAPI</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="assets/flask.png" alt="Flask">
+                        <span>Flask</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Async">
+                        <span>Async Python</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg" alt="WebSockets">
+                        <span>WebSockets</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ML / DL Libraries -->
+            <div class="sk-card glass" style="--sk-color: #f59e0b;">
+                <div class="sk-card__header">
+                    <div class="sk-card__icon" style="--sk-color: #f59e0b;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6zm0 10a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm0-6a2 2 0 1 0 2 2 2 2 0 0 0-2-2z"/></svg>
+                    </div>
+                    <h3>ML / DL Libraries</h3>
+                </div>
+                <div class="sk-items">
+                    <div class="sk-item sk-item--primary">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn">
+                        <span>Scikit-learn</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV">
+                        <span>OpenCV</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="assets/hf-logo.png" alt="Whisper / HuggingFace">
+                        <span>Whisper</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy">
+                        <span>NumPy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data & Vector Databases -->
+            <div class="sk-card glass" style="--sk-color: #38bdf8;">
+                <div class="sk-card__header">
+                    <div class="sk-card__icon" style="--sk-color: #38bdf8;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 13H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zm-1 6H5v-4h14v4zM20 3H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zm-1 6H5V5h14v4z"/><circle cx="7.5" cy="16.5" r="1.5"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                    </div>
+                    <h3>Data & Vector DBs</h3>
+                </div>
+                <div class="sk-items">
+                    <div class="sk-item sk-item--primary">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL">
+                        <span>MySQL</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="SQLite">
+                        <span>SQLite</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="FAISS">
+                        <span>FAISS</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chromadb/chromadb-original.svg" alt="ChromaDB" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg'">
+                        <span>ChromaDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cloud & Infrastructure -->
+            <div class="sk-card glass" style="--sk-color: #f97316;">
+                <div class="sk-card__header">
+                    <div class="sk-card__icon" style="--sk-color: #f97316;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                    </div>
+                    <h3>Cloud & Infrastructure</h3>
+                </div>
+                <div class="sk-items">
+                    <div class="sk-item sk-item--primary">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker">
+                        <span>Docker</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis">
+                        <span>Redis</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS">
+                        <span>AWS</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="GCP">
+                        <span>GCP</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase">
+                        <span>Supabase</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="assets/agentops.png" alt="Agentops">
+                        <span>Agentops</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="sk-card glass" style="--sk-color: #ec4899;">
+                <div class="sk-card__header">
+                    <div class="sk-card__icon" style="--sk-color: #ec4899;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                    </div>
+                    <h3>Tools</h3>
+                </div>
+                <div class="sk-items">
+                    <div class="sk-item sk-item--primary">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git">
+                        <span>Git</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="assets/github.webp" alt="GitHub">
+                        <span>GitHub</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg" alt="Streamlit">
+                        <span>Streamlit</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" alt="Playwright">
+                        <span>Playwright</span>
+                    </div>
+                    <div class="sk-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="ComfyUI">
+                        <span>ComfyUI</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI / ML Concepts — wide card (tags only, no icons) -->
+            <div class="sk-card sk-card--wide glass" style="--sk-color: #a855f7;">
+                <div class="sk-card__header">
+                    <div class="sk-card__icon" style="--sk-color: #a855f7;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    </div>
+                    <h3>AI / ML Concepts</h3>
+                </div>
+                <div class="sk-tags">
+                    <span class="sk-tag sk-tag--primary">Generative AI</span>
+                    <span class="sk-tag">LLMs</span>
+                    <span class="sk-tag">Multimodal AI</span>
+                    <span class="sk-tag">Agentic AI</span>
+                    <span class="sk-tag">NLP</span>
+                    <span class="sk-tag">Deep Learning</span>
+                    <span class="sk-tag">Prompt Engineering</span>
+                    <span class="sk-tag">Fine-tuning</span>
+                    <span class="sk-tag">RAG</span>
+                    <span class="sk-tag">Computer Vision</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects Section — Featured -->
+    <section class="projects-section" id="projects">
+        <div class="projects-header">
+            <div class="focus-badge">Featured Project</div>
+            <h2 class="focus-title">Latest <span>Work</span></h2>
+            <p class="focus-subtitle">A hand-picked flagship project that reflects my depth across AI engineering, backend systems, and developer tooling.</p>
+        </div>
+
+        <!-- AntiMatter Featured Card -->
+        <div class="featured-project">
+            <div class="fp-image-wrap">
+                <img src="assets/antimatter-preview.png" alt="AntiMatter IDE Screenshot" class="fp-image">
+                <div class="fp-image-glow"></div>
+                <div class="fp-image-badge">
+                    <span class="fp-status-dot"></span> AI-Powered IDE
+                </div>
+            </div>
+
+            <div class="fp-content">
+                <div class="fp-eyebrow">
+                    <span class="fp-label">Personal Project</span>
+                    <span class="fp-label fp-label--year">2026</span>
+                </div>
+
+                <h3 class="fp-title">AntiMatter <span>IDE</span></h3>
+
+                <p class="fp-desc">A fully-featured, AI-native developer environment built from scratch — combining a VS Code-style interface with an integrated LLM agent that can read, write, and reason about code in real time.</p>
+
+                <ul class="fp-highlights">
+                    <li><i class="bx bx-check-circle"></i> Monaco-based editor with syntax highlighting, multi-file tabs, and real-time saves</li>
+                    <li><i class="bx bx-check-circle"></i> WebSocket-streamed AI agent with full tool-call support (file read/write, shell execution)</li>
+                    <li><i class="bx bx-check-circle"></i> Persistent chat history, project memory, and live codebase indexing via SQLite</li>
+                    <li><i class="bx bx-check-circle"></i> Draggable, resizable panels — Sidebar, Editor, AI Chat, Terminal</li>
+                    <li><i class="bx bx-check-circle"></i> Global keyboard shortcuts system with a visual Shortcuts Overlay</li>
+                </ul>
+
+                <div class="fp-stack">
+                    <span>React</span>
+                    <span>FastAPI</span>
+                    <span>WebSockets</span>
+                    <span>Monaco Editor</span>
+                    <span>SQLite</span>
+                    <span>LangChain</span>
+                    <span>Python</span>
+                    <span>Tailwind CSS</span>
+                </div>
+
+                <div class="fp-actions">
+                    <a href="https://github.com/madhurchouhan01/antimatter" target="_blank" class="fp-btn fp-btn--demo">
+                        <i class="bx bxl-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- More on GitHub nudge -->
+        <p class="projects-github-note">
+            More projects available on 
+            <a href="https://github.com/madhurchouhan01" target="_blank">
+                <i class="bx bxl-github"></i> GitHub
+            </a>
+        </p>
         <!-- <div class="portfolio-container right">
             <div class="portfolio-box">
                 <img src="./assets/dog and cat.jpg" alt="">
@@ -479,54 +827,120 @@
         <!-- </div> -->
     </section>
 
-    <!-- contact section design -->
-    <section class="contact bottom" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-header">
+            <div class="focus-badge">Get in Touch</div>
+            <h2 class="focus-title">Contact <span>Me</span></h2>
+            <p class="focus-subtitle">Have a project in mind, want to collaborate, or just want to say hi? I'd love to hear from you.</p>
+        </div>
 
-        <!-- <div id="msg"></div> -->
-        
-        <form name="submit-to-emailjs">
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="text" name="Name" placeholder="Full Name" required>
-                    <span class="focus"></span>
+        <div class="contact-grid">
+            <!-- Info Panel -->
+            <div class="contact-info">
+                <div class="contact-info-card glass">
+                    <h3>Let's work together</h3>
+                    <p>I'm currently open to full-time roles and freelance opportunities in AI engineering, data science, and backend development.</p>
                 </div>
-                <div class="input-field">
-                    <input type="email" name="email" placeholder="Email" required>
-                    <span class="focus"></span>
+
+                <div class="contact-channels">
+                    <a href="mailto:madhur.ai.atwork@gmail.com" class="contact-channel glass">
+                        <div class="cc-icon" style="--cc:#6366f1"><i class="bx bx-envelope"></i></div>
+                        <div>
+                            <span class="cc-label">Email</span>
+                            <span class="cc-value">madhur.ai.atwork@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/madhur-chouhan-9a9bab228" target="_blank" class="contact-channel glass">
+                        <div class="cc-icon" style="--cc:#0a66c2"><i class="bx bxl-linkedin"></i></div>
+                        <div>
+                            <span class="cc-label">LinkedIn</span>
+                            <span class="cc-value">madhur-chouhan</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/madhurchouhan01" target="_blank" class="contact-channel glass">
+                        <div class="cc-icon" style="--cc:#333"><i class="bx bxl-github"></i></div>
+                        <div>
+                            <span class="cc-label">GitHub</span>
+                            <span class="cc-value">madhurchouhan01</span>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/madhur_chouhan_/" target="_blank" class="contact-channel glass">
+                        <div class="cc-icon" style="--cc:#e1306c"><i class="bx bxl-instagram"></i></div>
+                        <div>
+                            <span class="cc-label">Instagram</span>
+                            <span class="cc-value">@madhur_chouhan_</span>
+                        </div>
+                    </a>
                 </div>
             </div>
 
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="number" name="phone" placeholder="Phone No" required>
-                    <span class="focus"></span>
+            <!-- Contact Form -->
+            <form class="contact-form glass" name="submit-to-emailjs">
+                <div class="cf-row">
+                    <div class="cf-field">
+                        <label>Full Name</label>
+                        <input type="text" name="Name" placeholder="Madhur Chouhan" required>
+                    </div>
+                    <div class="cf-field">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                    </div>
                 </div>
-                <div class="input-field">
-                    <input type="text" name="subject" placeholder="Email Subject" required>
-                    <span class="focus"></span>
+                <div class="cf-row">
+                    <div class="cf-field">
+                        <label>Phone (optional)</label>
+                        <input type="tel" name="phone" placeholder="+91 00000 00000">
+                    </div>
+                    <div class="cf-field">
+                        <label>Subject</label>
+                        <input type="text" name="subject" placeholder="Collaboration / Opportunity" required>
+                    </div>
                 </div>
-            </div>
-
-            <div class="textarea-field">
-                <span class="focus"></span>
-                <textarea name="Message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-            </div>
-
-            <div class="btn-box btns">
-                <button type="submit" class="btn">Submit</button>
-            </div>
-            <div id="msg" style="margin-top: 10px; font-weight: bold; font-size: larger;"></div>
-        </form>
+                <div class="cf-field cf-field--full">
+                    <label>Message</label>
+                    <textarea name="Message" rows="6" placeholder="Tell me about your project or opportunity..." required></textarea>
+                </div>
+                <div class="cf-footer">
+                    <button type="submit" class="cf-submit">
+                        <i class="bx bx-send"></i> Send Message
+                    </button>
+                    <div id="msg" class="cf-msg"></div>
+                </div>
+            </form>
+        </div>
     </section>
 
-    <!-- footer design -->
-    <footer class="footer">
-        <div class="footer-text">
-            <p>Copyright &copy; 2025 by Madhur | All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="footer-logo">Madhur<span>.</span></span>
+                <p>Data Scientist & AI Engineer building intelligent systems for the real world.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#education">Journey</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/madhur-chouhan-9a9bab228" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://github.com/madhurchouhan01" target="_blank"><i class="bx bxl-github"></i></a>
+                <a href="mailto:madhur.ai.atwork@gmail.com"><i class="bx bx-envelope"></i></a>
+                <a href="https://www.instagram.com/madhur_chouhan_/" target="_blank"><i class="bx bxl-instagram"></i></a>
+            </div>
         </div>
-        <div class="footer-iconTop">
-            <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
+
+        <div class="footer-bottom">
+            <p>© 2026 Madhur Chouhan. All rights reserved.</p>
+            <a href="#home" class="footer-top-btn" title="Back to top">
+                <i class="bx bx-up-arrow-alt"></i>
+            </a>
         </div>
     </footer>
 

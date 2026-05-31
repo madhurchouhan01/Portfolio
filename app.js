@@ -80,13 +80,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 const toggleButton = document.getElementById('theme-toggle');
+const themeIcon = toggleButton.querySelector('i');
 const body = document.body;
+
+// Function to update icon classes based on current theme state
+function updateThemeIcon() {
+    if (!themeIcon) return;
+    if (body.classList.contains('dark-mode')) {
+        themeIcon.className = 'bx bx-sun';
+    } else {
+        themeIcon.className = 'bx bx-moon';
+    }
+}
 
 // Check localStorage for user preference
 if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark-mode');
-    toggleButton.textContent = '🌞';
 }
+updateThemeIcon();
 
 // Toggle function
 toggleButton.addEventListener('click', () => {
@@ -94,11 +105,10 @@ toggleButton.addEventListener('click', () => {
 
     if (body.classList.contains('dark-mode')) {
         localStorage.setItem('theme', 'dark');
-        toggleButton.textContent = '🌞';
     } else {
         localStorage.setItem('theme', 'light');
-        toggleButton.textContent = '🌛';
     }
+    updateThemeIcon();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -195,14 +205,8 @@ function handleDrag(e) {
   bulb.style.right = "auto";
   bulb.style.bottom = "auto";
   
-  // Update message position if it exists
-  const messageBox = document.querySelector('.groq-message');
-  if (messageBox) {
-    messageBox.style.left = (x - 280) + "px";
-    messageBox.style.top = (y + 20) + "px";
-    messageBox.style.right = "auto";
-    messageBox.style.bottom = "auto";
-  }
+  // Update message position dynamically
+  positionMessageBox();
   
   // If moved more than threshold, treat as dragging
   if (Math.abs(coords.x - startX) > 5 || Math.abs(coords.y - startY) > 5) {
@@ -220,24 +224,87 @@ function endDrag(e) {
   }
 }
 
+// Function to dynamically position the AI facts card (groq-message) relative to the bulb
+function positionMessageBox() {
+  const messageBox = document.getElementById("groq-message");
+  if (!messageBox) return;
+
+  const winW = window.innerWidth;
+  const bulbW = bulb.offsetWidth;
+  const bulbH = bulb.offsetHeight;
+  
+  const x = bulb.offsetLeft;
+  const y = bulb.offsetTop;
+
+  if (winW <= 768) {
+    // Mobile layout: fixed glass bottom card
+    messageBox.style.position = "fixed";
+    messageBox.style.left = "50%";
+    messageBox.style.transform = "translateX(-50%)";
+    messageBox.style.top = "auto";
+    messageBox.style.bottom = "100px";
+    messageBox.style.right = "auto";
+    messageBox.classList.remove("pos-left", "pos-right");
+    return;
+  }
+
+  // Desktop layout: position absolute relative to bulb's parent container
+  messageBox.style.position = "absolute";
+  messageBox.style.transform = "none";
+  
+  // Get bulb's client rect to check which half of screen it is in
+  const bulbRect = bulb.getBoundingClientRect();
+  if (bulbRect.left < winW / 2) {
+    // Bulb is on left half: place message card on the right
+    messageBox.style.left = (x + bulbW + 20) + "px";
+    messageBox.classList.add("pos-right");
+    messageBox.classList.remove("pos-left");
+  } else {
+    // Bulb is on right half: place message card on the left
+    messageBox.style.left = (x - 320) + "px"; // width is 300px + 20px space
+    messageBox.classList.add("pos-left");
+    messageBox.classList.remove("pos-right");
+  }
+
+  // Vertically center the message card with the bulb
+  const messageBoxH = messageBox.offsetHeight || 160;
+  messageBox.style.top = (y + (bulbH / 2) - (messageBoxH / 2)) + "px";
+  messageBox.style.right = "auto";
+  messageBox.style.bottom = "auto";
+}
+
 // Separate click handler function
 async function handleBulbClick() {
   const message = document.getElementById("groq-message");
   const API_ENDPOINT = "https://portfolio-backend-cg49.onrender.com/funfact";
   
-  message.textContent = "💡 wait...";
+  message.textContent = "💡 Loading interesting fact...";
   message.classList.add("show");
+  
+  // Position the card immediately
+  positionMessageBox();
   
   try {
     const response = await fetch(API_ENDPOINT, { method: "POST" });
     const data = await response.json();
     console.log(data);
     message.textContent = "💡 " + data.choices[0].message.content.trim();
+    // Reposition card as the content and height might have changed
+    setTimeout(positionMessageBox, 50);
   } catch (err) {
-    message.textContent = "❌ Error fetching fact!";
+    message.textContent = "❌ Error fetching fact! Please try again.";
     console.error(err);
+    setTimeout(positionMessageBox, 50);
   }
 }
+
+// Reposition message card on window resize
+window.addEventListener("resize", () => {
+  const messageBox = document.getElementById("groq-message");
+  if (messageBox && messageBox.classList.contains("show")) {
+    positionMessageBox();
+  }
+});
 
 // Mouse events
 bulb.addEventListener("mousedown", startDrag);
