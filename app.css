@@ -2586,9 +2586,7 @@ section {
         left: 0;
         width: 100%;
         padding: 1.5rem 6%;
-        background: rgba(255, 255, 255, 0.78);
-        backdrop-filter: blur(28px);
-        -webkit-backdrop-filter: blur(28px);
+        background: rgba(255, 255, 255, 0.94);
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         border-top: 1px solid rgba(255, 255, 255, 0.6);
         box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08), var(--glass-shadow);
@@ -2603,7 +2601,7 @@ section {
     }
 
     .dark-mode .navbar {
-        background: rgba(10, 10, 15, 0.82);
+        background: rgba(10, 10, 15, 0.96);
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         border-top: 1px solid rgba(255, 255, 255, 0.12);
         box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.4), var(--glass-shadow);
