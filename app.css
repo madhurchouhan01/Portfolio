@@ -1145,8 +1145,19 @@ section {
 .home {
     display: flex;
     align-items: center;
-    padding: 0 9%;
+    padding: 10rem 9% 2rem;
     justify-content: space-between;
+}
+
+@media (min-width: 721px) {
+    .home-info {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .my-img {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
 }
 
 .my-img { 
@@ -2542,7 +2553,7 @@ section {
     }
 
     .home {
-        padding: 0 4%;
+        padding: 10rem 4% 2rem;
     }
 
     .footer {
